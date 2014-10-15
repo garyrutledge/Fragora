@@ -1,0 +1,13 @@
+Tue, 14 Oct 2014 21:17:24 -0400
+doc/README_FOR_APP	Wed, 08 Oct 2014 18:51:49 -0400
+app/controllers/application_controller.rb	Wed, 08 Oct 2014 18:51:49 -0400
+app/controllers/award_types_controller.rb	Tue, 14 Oct 2014 14:04:27 -0400
+app/controllers/awards_controller.rb	Tue, 14 Oct 2014 13:52:32 -0400
+app/controllers/games_controller.rb	Fri, 10 Oct 2014 14:48:01 -0400
+app/controllers/users_controller.rb	Thu, 09 Oct 2014 12:19:09 -0400
+app/helpers/application_helper.rb	Wed, 08 Oct 2014 18:51:49 -0400
+app/helpers/users_helper.rb	Wed, 08 Oct 2014 19:21:23 -0400
+app/models/award.rb	Wed, 08 Oct 2014 20:10:47 -0400
+app/models/award_type.rb	Wed, 08 Oct 2014 20:13:14 -0400
+app/models/game.rb	Tue, 14 Oct 2014 20:20:50 -0400
+app/models/user.rb	Tue, 14 Oct 2014 20:56:04 -0400

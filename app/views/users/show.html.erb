@@ -1,0 +1,123 @@
+<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col-md-7">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title"><span class="glyphicon glyphicon-user"></span> Profile
+          <div class="btn-group btn-group-xs"></div>
+        </h3>
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-6">
+            <p>
+              <b>Username:</b>
+              <%= @user.username %>
+            </p>
+
+            <p>
+              <b>Email:</b>
+              <%= @user.email %>
+            </p>
+
+          </div>
+
+          <div class="col-md-6">
+            <p>
+              <b>Total kills:</b>
+              <%= @user.total_kills %>
+            </p>
+
+            <p>
+              <b>Total deaths:</b>
+              <%= @user.total_deaths %>
+            </p>
+
+            <p>
+              <b>Total headshots:</b>
+              <%= @user.total_headshots %>
+            </p>
+
+            <p>
+              <b>KDR:</b>
+              <%= @user.kdr %>
+            </p>
+
+            <p>
+              <b>Average accuracy:</b>
+              <%= @user.average_accuracy.to_int %>%
+            </p>
+
+            <div class="progress" style="width: 75%">
+              <div class="progress-bar progress-bar-success" style="width: <%= @user.average_accuracy %>%">
+                <span class="sr-only"></span>
+              </div>
+              <div class="progress-bar progress-bar-danger" style="width: <%= 100 - @user.average_accuracy %>%">
+                <span class="sr-only"></span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="btn-group btn-group-xs">
+        <%= link_to 'Edit', edit_user_path(@user), :class => "btn btn-default" %>
+      </div>
+
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <h3 class="panel-title"><span class="glyphicon glyphicon-star"></span> Achievements</h3>
+      </div>
+      <div class="panel-body">
+        <% @user_awards.each do |award_type| %>
+            <ul>
+              <span class="glyphicon glyphicon-star-empty"></span> <%= award_type.name %>
+            </ul>
+        <% end %>
+      </div>
+      <div class="btn-group btn-group-xs">
+        <%= link_to 'Achievements log', awards_path, :class => "btn btn-default" %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-7">
+    <div class="panel panel-success">
+      <div class="panel-heading"><span class="glyphicon glyphicon-th-list"></span> Stats for last 10 games</div>
+
+      <table class="table">
+        <tr>
+          <th>Kills</th>
+          <th>Deaths</th>
+          <th>Shots Fired</th>
+          <th>Shots Hit</th>
+          <th>Accuracy</th>
+          <th>Headshots</th>
+        </tr>
+        <% @recent_game_stats.each do |game| %>
+            <tr>
+              <td><%= game.kill %></td>
+              <td><%= game.deaths %></td>
+              <td><%= game.shots_fired %></td>
+              <td><%= game.shots_hit %></td>
+              <td><%= game.accuracy %></td>
+              <td><%= game.headshots %></td>
+            </tr>
+        <% end %>
+      </table>
+      <div class="btn-group btn-group-xs">
+        <%= link_to 'All Games', games_path, :class => "btn btn-default" %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="btn-group btn-group-xs">
+  <%= link_to 'Back', users_path, :class => "btn btn-default" %>
+</div>
+

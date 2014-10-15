@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col-md-7">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">Editing achievement <%= @award_type.name %></h3>
+      </div>
+      <div class="panel-body">
+        <%= render 'form' %>
+      </div>
+
+      <div class="btn-group btn-group-xs">
+        <%= link_to 'Back', award_types_path, :class => "btn btn-default" %>
+      </div>
+
+    </div>
+  </div>
+</div>

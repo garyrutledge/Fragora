@@ -1,0 +1,19 @@
+== Welcome to the Fragora Game Profile Service created by Gary Rutledge
+
+
+
+== Getting Started
+
+1. At the command prompt, cd into the project directory and run bundle install
+       cd Fragora
+       bundle install
+
+2. Run migrations and seed the database
+       rake db:create RAILS_ENV=production
+       rake db:migrate RAILS_ENV=production
+       rake db:seed RAILS_ENV=production
+
+2. Change directory to Fragora and start the web server:
+       cd Fragora; rails server (run with --help for options)
+
+3. Go to http://localhost:3000/ to use the app

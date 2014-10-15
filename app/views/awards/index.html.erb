@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-md-10">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">Achievements Log</h3>
+      </div>
+      <table class="table">
+        <tr>
+          <th>User</th>
+          <th>Achievement</th>
+          <th>Earned</th>
+
+        </tr>
+
+<% @awards.each do |award| %>
+  <tr>
+    <td><%=link_to award.user.username, award %></td>
+    <td><%=link_to award.award_type.name, award %></td>
+    <td><%=link_to award.created_at.strftime("%d %b %Y"), award %></td>
+    <td>
+      <div class="btn-group btn-group-xs">
+        <%= link_to "Delete", award, method: :delete, data: {confirm: 'Are you sure?'}, :class => "btn btn-default" %>
+      </div>
+    </td>
+  </tr>
+<% end %>
+      </table>
+      <div class="btn-group btn-group-sm">
+        <%= link_to "New" , new_award_path, :class => "btn btn-default" %>
+      </div>
+    </div>
+  </div>
+</div>
+<br/>
+
+

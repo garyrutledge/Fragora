@@ -1,0 +1,45 @@
+<div class="row">
+  <div class="col-md-10">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">Players</h3>
+        (Click Username to view profile)
+      </div>
+      <table class="table">
+        <tr>
+          <th>Player ID</th>
+          <th>Username</th>
+          <th>Email</th>
+          <th>KDR</th>
+          <th>Avg Accuracy</th>
+          <th>Joined</th>
+          <th>Last Played</th>
+
+        </tr>
+
+        <% @users.each do |user| %>
+            <tr>
+
+              <td><%= link_to user.id, user %></td>
+              <td><%= link_to user.username, user %></td>
+                <td><%= link_to user.email, user %></td>
+                <td><%= link_to user.kdr, user %></td>
+                <td><%= link_to "#{user.average_accuracy.to_int}%", user %></td>
+                <td><%= link_to user.created_at.strftime("%d %b %Y"), user %></td>
+                <td><%= link_to user.last_played, user %></td>
+              <td>
+                <div class="btn-group btn-group-xs">
+                  <%= link_to "Delete", user, method: :delete, data: {confirm: 'Are you sure?'}, :class => "btn btn-default" %>
+                </div>
+              </td>
+            </tr>
+        <% end %>
+      </table>
+      <div class="btn-group btn-group-sm">
+      <%= link_to "New" , new_user_path, :class => "btn btn-default" %>
+    </div>
+    </div>
+  </div>
+</div>
+<br/>
+

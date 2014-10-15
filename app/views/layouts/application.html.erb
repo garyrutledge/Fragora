@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fragora</title>
+  <%= stylesheet_link_tag "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+
+</head>
+<body>
+
+<div id="main-container" class="container">
+  <div class="row">
+    <div class="col-xs-2">
+      <h3><%= image_tag("logo.png") %></h3>
+      <ul class="nav nav-pills nav-stacked">
+        <li><%= link_to 'Player Profiles', users_path %></li>
+        <li><%= link_to 'Game Records', games_path %></li>
+        <li><%= link_to 'Achievements', award_types_path %></li>
+        <li><%= link_to 'Achievements Log', awards_path %></li>
+      </ul>
+    </div>
+    <div class="col-xs-10">
+      <br/><br/><br/><br/><br/>
+      <%= yield %>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
