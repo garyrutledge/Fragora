@@ -12,7 +12,7 @@ class Game < ActiveRecord::Base
     end
 
     def calculate_accuracy(shots_hit, shots_fired)
-        (shots_hit.to_f / shots_fired.to_f).round(2) * 100
+        ((shots_hit.to_f / shots_fired.to_f) * 100).round
     end
 
     def update_user_stats

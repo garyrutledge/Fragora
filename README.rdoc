@@ -22,4 +22,6 @@
 
 1. To run the automated tests, cd into the project directory and run Rspec
         cd Fragora
+        rake db:create RAILS_ENV=test
+        rake db:migrate RAILS_ENV=test
         rspec spec/

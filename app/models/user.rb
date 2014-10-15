@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
     attr_accessible :average_accuracy, :email, :kdr, :total_deaths, :total_headshots, :total_kills, :username
     has_many :games
     has_many :awards
-    has_many :award_types, through: :awards
+    has_many :award_types, :through => :awards
     validates_presence_of :email, :username
     validates_format_of :email, :with => /\A([^@\s]+)@([-a-zA-Z0-9]+\.)+[a-zA-Z]+\Z/
     before_save :default_blanks_to_zero, :calculate_kdr
