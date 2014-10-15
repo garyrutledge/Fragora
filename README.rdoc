@@ -13,7 +13,13 @@
        rake db:migrate RAILS_ENV=production
        rake db:seed RAILS_ENV=production
 
-2. Change directory to Fragora and start the web server:
-       cd Fragora; rails server (run with --help for options)
+2. Start the web server:
+       rails server (run with --help for options)
 
 3. Go to http://localhost:3000/ to use the app
+
+== Automated testing
+
+1. To run the automated tests, cd into the project directory and run Rspec
+        cd Fragora
+        rspec spec/
